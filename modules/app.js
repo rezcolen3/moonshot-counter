@@ -30,10 +30,13 @@ export async function app() {
   const count = await getCount();
   if (count === null) return;
 
-  if (count !== oldCount) {
-    oldCount = count;
-    await sendMsg(`Current number of sign-ups is ${count}`);
-  } else {
-    console.log("Count hasn't changed. Skipping");
-  }
+  await sendMsg(`
+Current number of sign-ups is ${count}
+In the last minutes we gained ${count - oldCount} more signup ${
+    oldCount == count ? ":nooo:" : ""
+  }	
+
+`);
+
+  oldCount = count;
 }

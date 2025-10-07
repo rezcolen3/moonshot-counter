@@ -6,4 +6,4 @@ import { WebClient } from "@slack/web-api";
 export let client = new WebClient(process.env.SLACK_BOT_TOKEN);
 
 import { app } from "./modules/app.js";
-setInterval(app, 20000);
+setInterval(app, 60000);
