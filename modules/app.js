@@ -32,7 +32,7 @@ export async function app() {
 
   if (count !== oldCount) {
     oldCount = count;
-    await sendMsg(`The current number of sign-ups is ${count}`);
+    await sendMsg(`Current number of sign-ups is ${count}`);
   } else {
     console.log("Count hasn't changed. Skipping");
   }
